@@ -35,4 +35,5 @@ jobs:
             ./* => /cicdtest
           # 完成拷贝后在部署服务器执行的命令
           last_ssh: |
+            cd /cicdtest
             docker compose up --build -d
