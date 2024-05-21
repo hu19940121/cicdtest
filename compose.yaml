@@ -1,0 +1,11 @@
+
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 7003:80
+    volumes:
+      - db-ngxin:/etc/nginx
+volumes:
+  db-ngxin:
