@@ -34,6 +34,10 @@ jobs:
           scp: |
             ./* => /cicdtest
           # 完成拷贝后在部署服务器执行的命令
+          # 1. 进入工作目录
+          # 2. 清理无用的镜像
+          # 3. 重新构建并启动容器
           last_ssh: |
             cd /cicdtest
+            docker image prune -f
             docker compose up --build -d
